@@ -30,6 +30,7 @@ static void createFlare ( u8 *buffer )
 		{
 			dist = SQR(sx) + SQR(sy);
 
+/*
 			__asm__(
 				"fildl	%0\n\t"
 				"fsqrt\n\t"
@@ -37,9 +38,10 @@ static void createFlare ( u8 *buffer )
 				: "=m"(dist)
 				: "0"(dist)
 			       );
+*/
 			
 			
-			//dist = (int)__builtin_sqrt(dist);
+			dist = (int)sqrt(dist);
 			
 			if (dist < 128)
 			{
